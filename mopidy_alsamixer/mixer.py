@@ -96,8 +96,8 @@ class AlsaMixer(pykka.ThreadingActor, mixer.Mixer):
         if self.volume_scale == "cubic":
             volume = (
                 GstAudio.StreamVolume.convert_volume(
-                    GstAudio.StreamVolumeFormat.CUBIC,
                     GstAudio.StreamVolumeFormat.LINEAR,
+                    GstAudio.StreamVolumeFormat.CUBIC,
                     volume / 100.0,
                 )
                 * 100.0
@@ -124,8 +124,8 @@ class AlsaMixer(pykka.ThreadingActor, mixer.Mixer):
         if self.volume_scale == "cubic":
             mixer_volume = (
                 GstAudio.StreamVolume.convert_volume(
-                    GstAudio.StreamVolumeFormat.LINEAR,
                     GstAudio.StreamVolumeFormat.CUBIC,
+                    GstAudio.StreamVolumeFormat.LINEAR,
                     mixer_volume / 100.0,
                 )
                 * 100.0
